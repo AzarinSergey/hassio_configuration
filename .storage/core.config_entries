@@ -1,0 +1,86 @@
+{
+    "version": 1,
+    "key": "core.config_entries",
+    "data": {
+        "entries": [
+            {
+                "entry_id": "833f8764148f11ebb3812117d0165a32",
+                "version": 1,
+                "domain": "met",
+                "title": "Home",
+                "data": {
+                    "track_home": true
+                },
+                "options": {},
+                "system_options": {
+                    "disable_new_entities": false
+                },
+                "source": "onboarding",
+                "connection_class": "cloud_poll",
+                "unique_id": null
+            },
+            {
+                "entry_id": "84cf04a4148f11ebaf96779b52ad9b9a",
+                "version": 1,
+                "domain": "rpi_power",
+                "title": "Raspberry Pi Power Supply Checker",
+                "data": {},
+                "options": {},
+                "system_options": {
+                    "disable_new_entities": false
+                },
+                "source": "onboarding",
+                "connection_class": "local_poll",
+                "unique_id": null
+            },
+            {
+                "entry_id": "8e603701169f11ebbecc4d4b1b1ea231",
+                "version": 1,
+                "domain": "upnp",
+                "title": "Wireless Router TL-WR841N/WR841ND",
+                "data": {
+                    "udn": "uuid:060b7353-fca6-4070-85f4-1fbfb9add62c",
+                    "st": "urn:schemas-upnp-org:device:InternetGatewayDevice:1"
+                },
+                "options": {},
+                "system_options": {
+                    "disable_new_entities": false
+                },
+                "source": "ssdp",
+                "connection_class": "local_poll",
+                "unique_id": "uuid:060b7353-fca6-4070-85f4-1fbfb9add62c::urn:schemas-upnp-org:device:InternetGatewayDevice:1"
+            },
+            {
+                "entry_id": "56325a0e192211eba25d23f8fae6d3b0",
+                "version": 1,
+                "domain": "mobile_app",
+                "title": "Mi 9 SE",
+                "data": {
+                    "app_id": "io.homeassistant.companion.android",
+                    "app_name": "Home Assistant",
+                    "app_version": "2.5.0-full (400)",
+                    "device_name": "Mi 9 SE",
+                    "manufacturer": "Xiaomi",
+                    "model": "Mi 9 SE",
+                    "os_name": "Android",
+                    "os_version": "29",
+                    "supports_encryption": false,
+                    "app_data": {
+                        "push_url": "https://mobile-apps.home-assistant.io/api/sendPush/android/v1",
+                        "push_token": "c48hlhkPScq2XLhqumS1_u:APA91bFmQje4AD_WgY73NRNolzeBhUEOVKNy1E2yrBDh16PyxZab4IW4k_XFxmvnD4vXA4OzSOX9V8RDuLU-uaagS3ZyZMhhERsZF8HnPAmFU2UfiCg9lsPmW3gSkyPUJyeVfRgaVDtI"
+                    },
+                    "device_id": "2f3c683dd53a07a3",
+                    "webhook_id": "2c96c52901658ad7492f1cc017a3c10d7fe8c195dc812b1c5fe11ed044461276",
+                    "user_id": "23728eabfc0a412699adc7570ad95b6a"
+                },
+                "options": {},
+                "system_options": {
+                    "disable_new_entities": false
+                },
+                "source": "registration",
+                "connection_class": "cloud_push",
+                "unique_id": "io.homeassistant.companion.android-2f3c683dd53a07a3"
+            }
+        ]
+    }
+}

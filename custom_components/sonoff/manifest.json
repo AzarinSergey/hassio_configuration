@@ -1,0 +1,8 @@
+{
+  "domain": "sonoff",
+  "name": "Sonoff",
+  "documentation": "https://github.com",
+  "dependencies": [],
+  "codeowners": [],
+  "requirements": []
+}

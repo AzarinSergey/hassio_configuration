@@ -1,0 +1,40 @@
+homeassistant:
+  name: Sazarin
+  latitude: 54.980383
+  longitude: 82.826792
+  elevation: 164
+  unit_system: metric
+  time_zone: Asia/Novosibirsk
+
+default_config:
+
+tts:
+  - platform: google_translate
+
+lovelace:
+  mode: yaml
+
+sensor: !include configuration.partials/sensors.yaml
+switch: !include configuration.partials/switches.yaml
+
+group: !include configuration.partials/groups.yaml
+automation: !include configuration.partials/automations.yaml
+script: !include configuration.partials/scripts.yaml
+scene: !include configuration.partials/scenes.yaml
+logger:
+  default: info
+
+sonoff:
+  devices:
+    sonoff_mini:
+      1000b61314:
+        friendly_name: Свет под управлением реле "Sonoff Mini"
+        platform: light
+        ip_address: 192.168.0.101
+        scheme: http
+        port: 8081
+
+binary_sensor:
+  - platform: rpi_gpio
+    ports:
+      14: PIR Motion

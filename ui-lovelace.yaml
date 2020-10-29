@@ -1,0 +1,40 @@
+title: Home Assistant - тестовый стенд
+views:
+
+  - title: Главная
+    icon: mdi:home-assistant
+    
+    cards:
+
+      - type: vertical-stack
+        cards:
+        
+        - type: markdown
+          content: >
+             **Текущее состояние**
+             
+        - type: entities
+          show_header_toggle: false
+          entities:
+            - entity: sensor.time
+              name: Текущее время
+              icon: mdi:clock-outline
+            - entity: sensor.date
+              name: Дата
+              icon: mdi:calendar-check-outline
+              
+        - type: horizontal-stack
+          cards:
+            - type: light
+              name: Тестовая лампочка
+              entity: light.sonoff_mini_1000b61314
+          
+            - type: entity
+              entity: light.sonoff_mini_1000b61314
+              attribute: signalStrength
+              name: Уровень сигнала
+              icon: mdi:contactless-payment
+          
+  - title: Местоположения
+    icon: mdi:map-search-outline
+              

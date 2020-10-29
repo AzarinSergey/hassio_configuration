@@ -1,0 +1,95 @@
+{
+    "version": 1,
+    "key": "core.restore_state",
+    "data": [
+        {
+            "state": {
+                "entity_id": "person.sazarin",
+                "state": "Home",
+                "attributes": {
+                    "editable": true,
+                    "id": "sazarin",
+                    "latitude": 54.9805024,
+                    "longitude": 82.8273034,
+                    "gps_accuracy": 20,
+                    "source": "person.sazarin",
+                    "user_id": "23728eabfc0a412699adc7570ad95b6a",
+                    "friendly_name": "sazarin"
+                },
+                "last_changed": "2020-10-29T11:31:09.671309+00:00",
+                "last_updated": "2020-10-29T11:31:09.671309+00:00",
+                "context": {
+                    "id": "3de1e50319da11eb81b863fd4439f0eb",
+                    "parent_id": null,
+                    "user_id": null
+                }
+            },
+            "last_seen": "2020-10-29T11:31:24.920153+00:00"
+        },
+        {
+            "state": {
+                "entity_id": "automation.vkliuchit_testovuiu_lampu_po_datchiku_dvizheniia",
+                "state": "on",
+                "attributes": {
+                    "last_triggered": "2020-10-29T07:40:20.167193+00:00",
+                    "mode": "single",
+                    "current": 0,
+                    "friendly_name": "\u0412\u043a\u043b\u044e\u0447\u0438\u0442\u044c \u0442\u0435\u0441\u0442\u043e\u0432\u0443\u044e \u043b\u0430\u043c\u043f\u0443 \u043f\u043e \u0434\u0430\u0442\u0447\u0438\u043a\u0443 \u0434\u0432\u0438\u0436\u0435\u043d\u0438\u044f"
+                },
+                "last_changed": "2020-10-29T11:31:14.316187+00:00",
+                "last_updated": "2020-10-29T11:31:14.316187+00:00",
+                "context": {
+                    "id": "40a6a6be19da11eb8ac053b0ba2f8fb1",
+                    "parent_id": null,
+                    "user_id": null
+                }
+            },
+            "last_seen": "2020-10-29T11:31:24.920153+00:00"
+        },
+        {
+            "state": {
+                "entity_id": "automation.vkliuchit_testovuiu_lampu_po_datchiku_dvizheniia_2",
+                "state": "on",
+                "attributes": {
+                    "last_triggered": "2020-10-29T07:41:06.980125+00:00",
+                    "mode": "single",
+                    "current": 0,
+                    "friendly_name": "\u0412\u043a\u043b\u044e\u0447\u0438\u0442\u044c \u0442\u0435\u0441\u0442\u043e\u0432\u0443\u044e \u043b\u0430\u043c\u043f\u0443 \u043f\u043e \u0434\u0430\u0442\u0447\u0438\u043a\u0443 \u0434\u0432\u0438\u0436\u0435\u043d\u0438\u044f"
+                },
+                "last_changed": "2020-10-29T11:31:14.317104+00:00",
+                "last_updated": "2020-10-29T11:31:14.317104+00:00",
+                "context": {
+                    "id": "40a6cc2719da11eb89180311baefcf83",
+                    "parent_id": null,
+                    "user_id": null
+                }
+            },
+            "last_seen": "2020-10-29T11:31:24.920153+00:00"
+        },
+        {
+            "state": {
+                "entity_id": "device_tracker.mi_9_se",
+                "state": "Home",
+                "attributes": {
+                    "source_type": "gps",
+                    "latitude": 54.9805024,
+                    "longitude": 82.8273034,
+                    "gps_accuracy": 20,
+                    "altitude": 71.0,
+                    "course": 0,
+                    "speed": 0,
+                    "vertical_accuracy": 2,
+                    "friendly_name": "Mi 9 SE"
+                },
+                "last_changed": "2020-10-29T11:31:15.389877+00:00",
+                "last_updated": "2020-10-29T11:31:15.389877+00:00",
+                "context": {
+                    "id": "414a7c8c19da11ebb67a85040a66db0b",
+                    "parent_id": null,
+                    "user_id": null
+                }
+            },
+            "last_seen": "2020-10-29T11:31:24.920153+00:00"
+        }
+    ]
+}

@@ -1,0 +1,16 @@
+{
+    "version": 2,
+    "key": "person",
+    "data": {
+        "items": [
+            {
+                "name": "sazarin",
+                "user_id": "23728eabfc0a412699adc7570ad95b6a",
+                "device_trackers": [
+                    "device_tracker.mi_9_se"
+                ],
+                "id": "sazarin"
+            }
+        ]
+    }
+}
