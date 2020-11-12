@@ -9,7 +9,7 @@
     entity_id: light.sonoff_mini_1000b61314
     
     
-- alias: Включить тестовую лампу по датчику движения
+- alias: Выключить тестовую лампу после движения
   trigger:
     platform: state
     entity_id: binary_sensor.pir_motion
