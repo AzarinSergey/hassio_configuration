@@ -34,7 +34,16 @@ views:
               attribute: signalStrength
               name: Уровень сигнала
               icon: mdi:contactless-payment
+              
+            - type: light
+              name: Светодиод
+              entity: light.indicator
           
+        - type: picture-glance
+          title: Front garden
+          entities: []
+          camera_image: camera.test_cam
+
   - title: Местоположения
     icon: mdi:map-search-outline
               

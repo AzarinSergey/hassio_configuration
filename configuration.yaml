@@ -38,3 +38,16 @@ binary_sensor:
   - platform: rpi_gpio
     ports:
       14: PIR Motion
+
+camera:
+  - platform: local_file
+    name: Test cam
+    file_path: /tmp/lastsnap.jpg
+
+light:    
+  - platform: rpi_gpio_pwm
+    leds:
+      - name: Indicator
+        driver: gpio
+        pins: [2]
+        type: simple
