@@ -111,3 +111,9 @@ $ curl -sL https://raw.githubusercontent.com/home-assistant/supervised-installer
 
 Now Hass.io UI on - IP adress:8123
 \
+
+[1]: <https://www.raspberrypi.org/>
+[2]: <https://www.balena.io/etcher/>
+[3]: <https://materialdesignicons.com/>
+[4]: <https://www.home-assistant.io/lovelace/>
+[5]: <https://github.com/home-assistant/supervised-installer>
