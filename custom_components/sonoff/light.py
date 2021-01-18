@@ -2,8 +2,10 @@ import async_timeout
 from datetime import timedelta
 from typing import Any, Optional, Dict
 
-from homeassistant.helpers.event import async_track_time_interval
-from homeassistant.components.light import LightEntity
+from homeassistant.helpers.event import (  # pylint: disable=import-error
+    async_track_time_interval,
+)
+from homeassistant.components.light import LightEntity  # pylint: disable=import-error
 
 from .__init__ import _LOGGER, DOMAIN, SONOFF_LIGHT, SONOFF_MINI_DEVICE
 from .__init__ import SonoffMiniDeviceApi
@@ -19,12 +21,20 @@ async def async_setup_platform(hass, config, async_add_entities, discovery_info=
 
     for light in hass.data[DOMAIN][SONOFF_MINI_DEVICE][SONOFF_LIGHT]:
         config = light["config"]
-        api = light["api_factory"].get_api(config["scheme"], config["ip_address"], config["port"])
-        default_friendly_name = SONOFF_MINI_DEVICE + "_" + config["ip_address"] + ":" + str(config["port"])
-        entity = SonoffMiniSwitchLight(api, config.get("friendly_name", default_friendly_name))
+        api = light["api_factory"].get_api(
+            config["scheme"], config["ip_address"], config["port"]
+        )
+        default_friendly_name = (
+            SONOFF_MINI_DEVICE + "_" + config["ip_address"] + ":" + str(config["port"])
+        )
+        entity = SonoffMiniSwitchLight(
+            api, config.get("friendly_name", default_friendly_name)
+        )
 
-        unsub_interval = async_track_time_interval(hass, entity.async_update, SCAN_INTERVAL)
-        #TODO: usnsubscribe... When does it?
+        unsub_interval = async_track_time_interval(
+            hass, entity.async_update, SCAN_INTERVAL
+        )
+        # TODO: usnsubscribe... When does it?
         # unsub_interval()
         # unsub_interval = None
 
@@ -52,7 +62,13 @@ class SonoffMiniSwitchLight(LightEntity):
         self.friendly_name = friendly_name
         self.api = api
         self.switch_state = None
-        self.entity_id = CUSTOM_INTEGRATION_PREFIX + "." + SONOFF_MINI_DEVICE + "." + self.api.device_id
+        self.entity_id = (
+            CUSTOM_INTEGRATION_PREFIX
+            + "."
+            + SONOFF_MINI_DEVICE
+            + "."
+            + self.api.device_id
+        )
         _LOGGER.warning("Entity #{}# registered".format(friendly_name))
 
     @property
@@ -65,7 +81,9 @@ class SonoffMiniSwitchLight(LightEntity):
 
     @property
     def enabled(self) -> bool:
-        return self.switch_state is not None and (self.registry_entry is None or not self.registry_entry.disabled)
+        return self.switch_state is not None and (
+            self.registry_entry is None or not self.registry_entry.disabled
+        )
 
     @property
     def device_state_attributes(self) -> Optional[Dict[str, Any]]:
@@ -86,5 +104,4 @@ class SonoffMiniSwitchLight(LightEntity):
         return True
 
     async def async_update(self, *args):
-        _LOGGER.warning("{},{},{},{}", args)
         self.switch_state = self.api.info()

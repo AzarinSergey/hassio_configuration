@@ -1,17 +1,28 @@
 import logging
 import requests
-from homeassistant.helpers import discovery
+
+from homeassistant.helpers import discovery  # pylint: disable=import-error
 
 _LOGGER = logging.getLogger(__name__)
-DOMAIN = 'sonoff'
-SONOFF_DEVICES = 'devices'
-SONOFF_LIGHT = 'light'
-SONOFF_MINI_DEVICE = 'sonoff_mini'
+DOMAIN = "sonoff"
+SONOFF_DEVICES = "devices"
+SONOFF_LIGHT = "light"
+SONOFF_MINI_DEVICE = "sonoff_mini"
 
 
 def sonoff_mini_devices_load_platform(hass, config, devices):
-    mini_lights = list((({"api_factory": SonoffApiFactory(device_id, SONOFF_MINI_DEVICE), "config": device})
-                        for device_id, device in devices.items() if device['platform'] == SONOFF_LIGHT))
+    mini_lights = list(
+        (
+            (
+                {
+                    "api_factory": SonoffApiFactory(device_id, SONOFF_MINI_DEVICE),
+                    "config": device,
+                }
+            )
+            for device_id, device in devices.items()
+            if device["platform"] == SONOFF_LIGHT
+        )
+    )
 
     if len(mini_lights) > 0:
         hass.data[DOMAIN][SONOFF_MINI_DEVICE][SONOFF_LIGHT] = mini_lights
@@ -36,15 +47,17 @@ def setup(hass, config):
 
 
 class SonoffApiFactory:
-    def __init__(self, device_id, device_type, control_type='diy'):
+    def __init__(self, device_id, device_type, control_type="diy"):
         self.device_id = device_id
         self.device_type = device_type
         self.controlType = control_type
 
     def get_api(self, device_scheme, device_host, device_port):
-        if self.controlType == 'diy':
+        if self.controlType == "diy":
             if self.device_type == SONOFF_MINI_DEVICE:
-                return SonoffMiniDeviceApi(self.device_id, device_scheme, device_host, device_port)
+                return SonoffMiniDeviceApi(
+                    self.device_id, device_scheme, device_host, device_port
+                )
             # if self.device_type == SONOFF_OTHER_DEVICE :
             #     return SonoffOtherDeviceApi(self.device_id, device_scheme, device_host, device_port)
             # if self.device_type == SONOFF_OTHER_DEVICE :
@@ -72,7 +85,7 @@ class SonoffMiniDeviceApi:
         response.close()
 
         if state_model["error"] == 0:
-            return state_model['data']
+            return state_model["data"]
 
         return None
 
@@ -90,7 +103,9 @@ class SonoffMiniDeviceApi:
 
     def __switch_request(self, command):
         url = self.__switch_url_template.format(self.device_host, self.device_port)
-        response = requests.post(url, json={"deviceid": self.device_id, "data": {"switch": command}})
+        response = requests.post(
+            url, json={"deviceid": self.device_id, "data": {"switch": command}}
+        )
         response_json = response.json()
         response.close()
         return response_json

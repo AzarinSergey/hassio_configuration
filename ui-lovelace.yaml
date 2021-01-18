@@ -3,16 +3,16 @@ views:
 
   - title: Главная
     icon: mdi:home-assistant
-    
+
     cards:
 
       - type: vertical-stack
         cards:
-        
+
         - type: markdown
           content: >
              **Текущее состояние**
-             
+
         - type: entities
           show_header_toggle: false
           entities:
@@ -22,28 +22,16 @@ views:
             - entity: sensor.date
               name: Дата
               icon: mdi:calendar-check-outline
-              
-        - type: horizontal-stack
-          cards:
-            - type: light
-              name: Тестовая лампочка
-              entity: light.sonoff_mini_1000b61314
-          
-            - type: entity
-              entity: light.sonoff_mini_1000b61314
-              attribute: signalStrength
-              name: Уровень сигнала
-              icon: mdi:contactless-payment
-              
-            - type: light
-              name: Светодиод
-              entity: light.indicator
-          
-        - type: picture-glance
-          title: Front garden
-          entities: []
-          camera_image: camera.test_cam
+
+        # - type: horizontal-stack
+        #   cards:
+            # - type: light
+            #   name: Тестовая лампочка
+            #   entity: light.sonoff_mini_1000b61314
+
+            # - type: light
+            #   name: Светодиод
+            #   entity: light.indicator
 
   - title: Местоположения
     icon: mdi:map-search-outline
-              

@@ -24,30 +24,33 @@ scene: !include configuration.partials/scenes.yaml
 logger:
   default: info
 
-sonoff:
-  devices:
-    sonoff_mini:
-      1000b61314:
-        friendly_name: Свет под управлением реле "Sonoff Mini"
-        platform: light
-        ip_address: 192.168.0.101
-        scheme: http
-        port: 8081
+# sonoff:
+#   devices:
+#     sonoff_mini:
+#       1000b61314:
+#         friendly_name: Свет под управлением реле "Sonoff Mini"
+#         platform: light
+#         ip_address: 192.168.0.101
+#         scheme: http
+#         port: 8081
 
-binary_sensor:
-  - platform: rpi_gpio
-    ports:
-      14: PIR Motion
+# sazarin:
+#   devices:
+#     simple_rgb_light:
+#       192.168.0.101:
+#         friendly_name: RGB лента на ESP8266
+#         scheme: http
+#         port: 80
 
-camera:
-  - platform: local_file
-    name: Test cam
-    file_path: /tmp/lastsnap.jpg
+# binary_sensor:
+#   - platform: rpi_gpio
+#     ports:
+#       14: PIR Motion
 
-light:    
-  - platform: rpi_gpio_pwm
-    leds:
-      - name: Indicator
-        driver: gpio
-        pins: [2]
-        type: simple
+# light:
+#   - platform: rpi_gpio_pwm
+#     leds:
+#       - name: Indicator
+#         driver: gpio
+#         pins: [2]
+#         type: simple
