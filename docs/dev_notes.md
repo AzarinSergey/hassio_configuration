@@ -22,6 +22,11 @@ $ netstat -a |grep 8123
 $ getconf LONG_BIT
 ```
 \
+
+Dev env
+```sh
+hass --config /workspaces/hassio-fork/config
+
 Use material design [icons][3] to improve your [lovelace UI][4]
 
 [1]: <https://www.raspberrypi.org/>
